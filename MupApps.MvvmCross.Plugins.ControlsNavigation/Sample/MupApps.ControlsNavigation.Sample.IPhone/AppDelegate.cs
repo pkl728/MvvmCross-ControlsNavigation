@@ -3,18 +3,19 @@
 // MvvmCross - Controls Navigation Plugin is licensed using Microsoft Public License (Ms-PL)
 // 
 
+using System.Drawing;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.ViewModels;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace MupApps.ControlsNavigation.Sample.IPhone
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
 	// User Interface of the application, as well as listening (and optionally responding) to
 	// application events from iOS.
-	[Register ("AppDelegate")]
+	[Foundation.Register("AppDelegate")]
     public partial class AppDelegate : MvxApplicationDelegate
 	{
 		// class-level declarations
@@ -28,7 +29,7 @@ namespace MupApps.ControlsNavigation.Sample.IPhone
 		//
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-            _window = new UIWindow(UIScreen.MainScreen.Bounds);
+            _window = new UIWindow((RectangleF)UIScreen.MainScreen.Bounds);
 
             var setup = new Setup(this, _window);
             setup.Initialize();

@@ -20,11 +20,6 @@ namespace MupApps.ControlsNavigation.Sample.DroidTablet
             checkBox.CheckedChange += (sender, args) => checkBox.Checked = !checkBox.Checked;
         }
         
-        public void Include(Switch @switch)
-        {
-            @switch.CheckedChange += (sender, args) => @switch.Checked = !@switch.Checked;
-        }
-
         public void Include(View view)
         {
             view.Click += (s, e) => view.ContentDescription = view.ContentDescription + "";
